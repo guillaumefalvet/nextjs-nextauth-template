@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
-const whiteListedEmails = ["user1@example.com", "user2@example.com", "guillaume.falvet@gmail.co"];
+const whiteListedEmails = ["user1@example.com", "user2@example.com", "guillaume.falvet@gmail.com"];
 export const authOptions = {
   providers: [
     GitHubProvider({
@@ -9,15 +9,9 @@ export const authOptions = {
     }),
   ],
 };
-
 export const handler = NextAuth(
   {
-    providers: [
-      GitHubProvider({
-        clientId: process.env.GITHUB_ID ?? "",
-        clientSecret: process.env.GITHUB_SECRET ?? "",
-      }),
-    ],
+    ...authOptions,
     callbacks: {
       async signIn({ email, user }) {
         console.log("signIn", { email });
