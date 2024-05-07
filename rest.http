@@ -1,0 +1,6 @@
+
+@endpoint = http://localhost:3000
+
+#### --------------AUTH--------------
+### Create Account
+GET {{endpoint}}/api/upload
