@@ -10,7 +10,6 @@ const authOptions: AuthOptions = {
   ],
   callbacks: {
     async signIn({ user }) {
-      console.log("signIn", user);
       if (!user.email) return false;
       const userExists = await prisma.user.findFirst({
         where: {
