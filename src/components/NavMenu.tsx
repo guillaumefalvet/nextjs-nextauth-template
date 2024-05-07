@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from 'next/image'
 import { signIn, signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
@@ -12,17 +13,23 @@ function AuthButton() {
   if (session) {
     return (
       <>
-        {session?.user?.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        <div className="flex items-center">
+          <span className=" mr-2">{session?.user?.name}</span>
+        {session?.user?.image && <Image  className="rounded-full" src={session?.user?.image} alt={`image of ${session?.user?.name}`} width={60} height={60}/>}</div>
+        <button className=" my-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={() => signOut()}>Sign out</button>
       </>
     );
   }
   return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
+    <button
+      onClick={() => signIn()}
+      className=" my-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+    >
+      Sign in
+    </button>
   );
+
+
 }
 
 export default function NavMenu() {

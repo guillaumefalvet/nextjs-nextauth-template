@@ -5,9 +5,8 @@ export default async function Home() {
 
   return (
     <>
-      getServerSession Result
       {session?.user?.name ? (
-        <div>{session?.user?.name}</div>
+        <div>Welcome logged-in user</div>
       ) : (
         <div>Not logged in</div>
       )}
