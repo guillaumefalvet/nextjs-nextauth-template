@@ -1,6 +1,10 @@
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET=
 GITHUB_ID=
 GITHUB_SECRET=
-DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
-NODE_ENV=
+
+NEXTAUTH_SECRET=lsdkmlskdmflksdkskmsdnkj
+NEXTAUTH_URL=http://localhost:3000
+
+JWT_SECRET_KEY=eefeijfkskjhfuhudhfudd
+JWT_EXPIRES_IN=1h
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres
+NODE_ENV=dev
