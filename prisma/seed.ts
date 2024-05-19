@@ -7,6 +7,8 @@ const seed = async () => {
     const data: Prisma.UserCreateArgs['data'][] = [
       {
         email: 'whitelist@email.com',
+        name: 'Whitelist User',
+        password: 'password',
       },
     ];
 
