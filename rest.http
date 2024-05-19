@@ -2,5 +2,16 @@
 @endpoint = http://localhost:3000
 
 #### --------------AUTH--------------
-### Create Account
+### get
 GET {{endpoint}}/api/upload
+
+### create user
+POST {{endpoint}}/api/user
+content-type: application/json
+
+{
+    "name": "name",
+    "email": "email@email.com",
+    "password": "password"
+}
+
